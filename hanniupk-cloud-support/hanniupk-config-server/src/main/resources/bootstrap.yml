@@ -27,8 +27,8 @@ spring:
         git:
           uri: https://gitee.com/410584740/hanniupk-config-repo.git
 #          default-label: ${spring.profiles.active}   #解决监控down
-          username: zhanglj047@qq.com
-          password: zhanglj1988
+          username: xxxx@qq.com
+          password: xxxx
           search-paths: /**
   boot:
     admin:
@@ -48,8 +48,8 @@ spring:
         git:
           uri: https://gitee.com/410584740/hanniupk-config-repo.git
           #          default-label: ${spring.profiles.active}   #解决监控down
-          username: zhanglj047@qq.com
-          password: zhanglj1988
+          username: xxxx@qq.com
+          password: xxxx
           search-paths: /**
   boot:
     admin:
