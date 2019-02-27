@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>info.hanniu.hanniupk</groupId>
+    <artifactId>hanniupk-biz-support</artifactId>
+    <version>1.0.0</version>
+
+    <packaging>pom</packaging>
+
+    <name>hanniupk-biz-support</name>
+    <description>业务支持，字典，文件，日志</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+
+    <modules>
+        <module>modular-dict</module>
+        <module>modular-file</module>
+        <module>modular-log</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <lombok.version>1.18.0</lombok.version>
+        <mp.version>2.3</mp.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!--本项目的依赖管理-->
+            <dependency>
+                <groupId>info.hanniu.hanniupk</groupId>
+                <artifactId>biz-support-dict-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>info.hanniu.hanniupk</groupId>
+                <artifactId>biz-support-file-api</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+
+            <!--本框架的依赖管理-->
+            <dependency>
+                <groupId>info.hanniu.hanniupk</groupId>
+                <artifactId>kernel-core</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>info.hanniu.hanniupk</groupId>
+                <artifactId>kernel-logger</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>info.hanniu.hanniupk</groupId>
+                <artifactId>kernel-model</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>info.hanniu.hanniupk</groupId>
+                <artifactId>kernel-scanner</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+
+            <!--spring cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>info.hanniu.hanniupk</groupId>
+            <artifactId>kernel-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-support</artifactId>
+            <version>${mp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--web ，**注意可选**-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>

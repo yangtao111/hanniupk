@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="info.hanniu.hanniupk.backend.modular.mapper.PlayerGradeMapper">
+
+    <!--&lt;!&ndash; 通用查询映射结果 &ndash;&gt;
+    <resultMap id="PlayerGradeBaseResultMap" type="info.hanniu.hanniupk.backend.modular.entity.PlayerGrade">
+        <id column="id" property="id"/>
+        <result column="grade_code" property="gradeCode"/>
+        <result column="grade_name" property="gradeName"/>
+        <result column="start_experience" property="startExperience"/>
+        <result column="end_experience" property="endExperience"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="sort" property="sort"/>
+        <result column="create_by" property="createBy"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="remark" property="remark"/>
+    </resultMap>
+
+    &lt;!&ndash; 通用查询结果列 &ndash;&gt;
+    <sql id="Base_Column_List">
+        grade_code AS gradeCode,grade_name AS gradeName,start_experience AS startExperience,
+        end_experience AS endExperience,create_time AS createTime, update_time AS updateTime, create_by AS createBy, update_by AS updateBy, remark
+    </sql>-->
+
+</mapper>

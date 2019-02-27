@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+hanniupk:
+  log:
+    kafka: false
+    level: error,info
+    trace: false
+
+spring:
+  application:
+    name: support-log
+  datasource:
+    url: jdbc:mysql://test.hanniu.info:3306/hanniupk?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC
+    username: admin
+    password: TxjJzyzqbx007
+  kafka:
+    bootstrap-servers: test.hanniu.info:9092
+    listener:
+      type: BATCH
+    producer:
+      batchSize: 500
+      keySerializer: org.apache.kafka.common.serialization.StringSerializer
+      valueSerializer: info.hanniu.hanniupk.kernel.logger.serizlizer.FastjsonKafkaSerializer
+    consumer:
+      group-id: commonLogList
+      keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+      valueDeserializer: FastjsonKafkaDeserializer
+      auto-offset-reset: earliest
+      maxPollRecords: 500
+
+mybatis-plus:
+  typeAliasesPackage: info.hanniu.hanniupk.biz.file.modular.entity

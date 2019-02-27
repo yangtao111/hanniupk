@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: support-dict
+  datasource:
+    url: jdbc:mysql://test.hanniu.info:3306/hanniupk?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC
+    username: admin
+    password: TxjJzyzqbx007
+
+mybatis-plus:
+  typeAliasesPackage: info.hanniu.hanniupk.biz.dict.modular.entity

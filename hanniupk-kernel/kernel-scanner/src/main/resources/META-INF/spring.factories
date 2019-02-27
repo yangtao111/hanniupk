@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+info.hanniu.hanniupk.kernel.scanner.config.ScannerAutoConfiguration

@@ -1,0 +1,103 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: HANNIUPK-CONFIG-SERVER
+  profiles:
+    active: @spring.active@
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+---
+
+spring:
+  profiles: local
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        git:
+          uri: https://gitee.com/410584740/hanniupk-config-repo.git
+#          default-label: ${spring.profiles.active}   #解决监控down
+          username: zhanglj047@qq.com
+          password: zhanglj1988
+          search-paths: /**
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9000
+        instance:
+          service-base-url: http://127.0.0.1:8002
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        git:
+          uri: https://gitee.com/410584740/hanniupk-config-repo.git
+          #          default-label: ${spring.profiles.active}   #解决监控down
+          username: zhanglj047@qq.com
+          password: zhanglj1988
+          search-paths: /**
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9000
+        instance:
+          service-base-url: http://127.0.0.1:8002
+
+---
+
+spring:
+  profiles: produce
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        git:
+          uri: https://gitee.com/410584740/hanniupk-config-repo.git
+          #          default-label: ${spring.profiles.active}   #解决监控down
+          username: zhanglj047@qq.com
+          password: zhanglj1988
+          search-paths: /**
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9000
+        instance:
+          service-base-url: http://127.0.0.1:8002
+
+---
+spring:
+  profiles: test
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        git:
+          uri: https://gitee.com/410584740/hanniupk-config-repo.git
+          #          default-label: ${spring.profiles.active}   #解决监控down
+          username: zhanglj047@qq.com
+          password: zhanglj1988
+          search-paths: /**
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9000
+        instance:
+          service-base-url: http://127.0.0.1:8002
+
+
+

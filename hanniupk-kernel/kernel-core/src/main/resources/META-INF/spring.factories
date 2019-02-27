@@ -1,0 +1,10 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+info.hanniu.hanniupk.core.config.AopAutoConfiguration,\
+info.hanniu.hanniupk.core.config.RedisAutoConfiguration,\
+info.hanniu.hanniupk.core.config.FastjsonAutoConfiguration,\
+info.hanniu.hanniupk.core.config.MybaitsPlusAutoConfiguration,\
+info.hanniu.hanniupk.core.config.PropertiesAutoConfiguration,\
+info.hanniu.hanniupk.core.config.UtilAutoConfiguration,\
+info.hanniu.hanniupk.core.config.WebAutoConfiguration,\
+info.hanniu.hanniupk.core.config.DbInitializerAutoConfiguration
